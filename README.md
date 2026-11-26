@@ -1,6 +1,6 @@
 # noted
 
-Turn finished answers into a handwritten PDF styled from your notes.
+Generate realistic handwritten PDFs from text, equations, or notes using a handwriting sample.
 
 ## Install
 
@@ -14,10 +14,10 @@ For Claude Code or another compatible agent, copy the complete [`skills/noted`](
 
 ## Use
 
-Finish your answers first. Then attach a handwriting sample and invoke the skill in the same chat:
+Attach a handwriting sample and point to the content you want written:
 
 > Use noted to turn the answers above into a handwritten PDF in the style of this sample.
 
-You can also attach the finished answers as a separate file. `noted` copies the answers as written and uses the sample for letter shapes, pen weight, spacing, and page layout.
+`noted` generates new ink and follows the sample's letter shapes, pen weight, spacing, and page layout. It preserves the supplied content.
 
 [Renderer guide](skills/noted/references/usage.md)
