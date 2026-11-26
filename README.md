@@ -1,21 +1,23 @@
 # noted
 
-noted is an agent skill for turning homework handwriting samples into a checked, identical PDF of worked solutions. It uses your sample to guide the handwriting, including uneven lettering, spacing, and equation layout. Send the assignment and sample together in one prompt.
+Turn finished answers into a handwritten PDF styled from your notes.
 
 ## Install
 
-Use the complete [skills/noted](skills/noted) folder so the renderer and notebook preset travel with the skill.
+In Codex:
 
-- **Codex:** Ask `$skill-installer install https://github.com/valleysonata/noted/tree/main/skills/noted`. Start a new session and invoke `$noted`.
-- **Claude Code:** Copy `skills/noted` to `~/.claude/skills/noted` or `.claude/skills/noted` in your project. Invoke `/noted`.
-- **Other agents:** Copy the folder to the host's skills directory or point the agent at [SKILL.md](skills/noted/SKILL.md). The full workflow needs image editing that accepts references and a shell that can run Node.js 20+. ChatGPT support depends on whether your workspace exposes skill import and the required tools.
+```text
+$skill-installer install https://github.com/valleysonata/noted/tree/main/skills/noted
+```
+
+For Claude Code or another compatible agent, copy the complete [`skills/noted`](skills/noted) folder into its skills directory. Handwriting generation requires an image editor that accepts references. The bundled PDF renderer uses Node.js 20+.
 
 ## Use
 
-Attach the assignment and a handwriting sample. A PDF or photo works as a style reference. You can also attach your own worked answers for transcription.
+Finish your answers first. Then attach a handwriting sample and invoke the skill in the same chat:
 
-> Use noted. Solve the attached physics homework and produce a PDF using the handwriting and ruled layout in the attached sample.
+> Use noted to turn the answers above into a handwritten PDF in the style of this sample.
 
-The agent checks the solutions, proofs one representative section, and repairs mismatched image batches before exporting. If you already have ink images, it can trace those directly. PDF title and author are optional.
+You can also attach the finished answers as a separate file. `noted` copies the answers as written and uses the sample for letter shapes, pen weight, spacing, and page layout.
 
-Run `npm run demo` with Node.js 20+ and open `example.pdf` to try the renderer offline. See the [renderer guide](skills/noted/references/usage.md) for manifest, metadata, and verification commands.
+[Renderer guide](skills/noted/references/usage.md)
