@@ -6,9 +6,9 @@ The early per-character approach sampled glyph variants and drew missing charact
 
 Use a short reference-guided edit instruction such as:
 
-> Write the supplied, checked solution on this notebook page. Match the small compact strokes, uneven letter heights, narrow forms, occasional joins, variable spacing and black tablet ink. Keep headings a little larger. Use stacked fractions and cover the entire radicand. Leave the right side open when a line is short. Write each line exactly once.
+> Replace the writing with the checked lines below. Keep the hand in the attached page. Carry over its irregular letter heights, cramped joins, uneven gaps, and small baseline changes wherever they appear in the sample. Keep the ink as dark and thick as the reference at the same scale. Preserve the rough letter shapes even when the result looks less tidy. Keep each number, sign, and exponent exact.
 
-Compare the test at normal page size and enlarged. Keep handwriting slightly irregular. Make the long bars smoother than the letters. Preserve room between problems while allowing the next section to start on the same page. Two columns work for short related parts. For two-column source images, crop into reading-order blocks with white padding before tracing.
+Compare the proof and reference side by side using the same rule spacing. Look at repeated digits, narrow letter shapes, and the darkest downstrokes. If the proof looks tidier or thinner, feed the original page back into the editor, name the visible mismatch, and redo just the proof. Keep irregularity in the writing and preserve legible fraction and radical bars. Preserve room between problems while allowing the next section to start on the same page. Two columns work for short related parts. For two-column source images, crop into reading-order blocks with white padding before tracing.
 
 ## Actual rendering path
 
