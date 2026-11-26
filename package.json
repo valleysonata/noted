@@ -1,9 +1,9 @@
 {
-  "name": "notebook-ink",
+  "name": "noted",
   "version": "0.1.0",
   "private": true,
   "description": "Trace handwritten equation pages into a continuous ruled vector PDF.",
   "engines": { "node": ">=20" },
-  "scripts": { "test": "node --test", "demo": "node scripts/render.cjs assets/example.json example.pdf" },
-  "bin": { "notebook-ink": "./scripts/render.cjs" }
+  "scripts": { "test": "node --test", "demo": "node skills/noted/scripts/render.cjs skills/noted/assets/example.json example.pdf" },
+  "bin": { "noted": "./skills/noted/scripts/render.cjs" }
 }

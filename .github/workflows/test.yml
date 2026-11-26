@@ -11,4 +11,4 @@ jobs:
         with:
           node-version: 20
       - run: node --test
-      - run: node scripts/render.cjs assets/example.json example.pdf
+      - run: node skills/noted/scripts/render.cjs skills/noted/assets/example.json example.pdf

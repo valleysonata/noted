@@ -35,7 +35,7 @@ function render(manifest, directory, date = new Date()) {
       slot++;
     }
   }
-  return makePdf(sheets,profile,date);
+  return makePdf(sheets,profile,date,manifest.metadata);
 }
 if(require.main===module){
   try{

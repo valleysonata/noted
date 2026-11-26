@@ -8,7 +8,7 @@ try {
   $rgb = [Drawing.Bitmap]::new($im.Width, $im.Height, [Drawing.Imaging.PixelFormat]::Format24bppRgb)
   try {
     $g = [Drawing.Graphics]::FromImage($rgb)
-    try { $g.Clear([Drawing.Color]::White); $g.DrawImageUnscaled($im,0,0) } finally { $g.Dispose() }
+    try { $g.Clear([Drawing.Color]::White); $g.DrawImage($im,0,0,$im.Width,$im.Height) } finally { $g.Dispose() }
     $out = [IO.File]::Open($destPath,[IO.FileMode]::CreateNew)
     try { $rgb.Save($out,[Drawing.Imaging.ImageFormat]::Bmp) } finally { $out.Dispose() }
   } finally { $rgb.Dispose() }

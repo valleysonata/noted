@@ -1,7 +1,22 @@
 const zlib = require('node:zlib');
 const fixed = value => Number(value.toFixed(3));
 
-function makePdf(sheets, profile, date) {
+function pdfText(value) {
+  const utf16 = Buffer.from(value, 'utf16le').swap16();
+  return '<FEFF' + utf16.toString('hex') + '>';
+}
+
+function makePdf(sheets, profile, date, metadata = {}) {
+  if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata)) {
+    throw Error('Metadata must be an object');
+  }
+  const fields = {title: 'Title', author: 'Author'};
+  const entries = Object.entries(metadata).map(([key, value]) => {
+    if (!Object.hasOwn(fields, key) || typeof value !== 'string') {
+      throw Error('Invalid PDF metadata field: ' + key);
+    }
+    return ' /' + fields[key] + ' ' + pdfText(value);
+  });
   const chunks = [], offsets = [0];
   let length = 0;
   function add(value) {
@@ -31,7 +46,7 @@ function makePdf(sheets, profile, date) {
   }
   const stamp='D:'+date.toISOString().slice(0,19).replace(/[-:T]/g,'')+'Z';
   const info=offsets.length;
-  object(info,'<< /Producer (notebook-ink) /CreationDate ('+stamp+') /ModDate ('+stamp+') >>');
+  object(info,'<< /Producer (noted) /CreationDate ('+stamp+') /ModDate ('+stamp+')'+entries.join('')+' >>');
   const xref=length;
   add('xref\n0 '+offsets.length+'\n0000000000 65535 f \n'+offsets.slice(1).map(n=>String(n).padStart(10,'0')+' 00000 n \n').join(''));
   add('trailer\n<< /Size '+offsets.length+' /Info '+info+' 0 R /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF\n');
