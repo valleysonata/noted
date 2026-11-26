@@ -1,6 +1,6 @@
 # noted
 
-Generate realistic handwritten PDFs from text, equations, or notes using a handwriting sample.
+An agent skill to generate realistic handwritten PDFs from text, equations, or notes using a handwriting sample.
 
 ## Install
 
