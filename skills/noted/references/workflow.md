@@ -1,14 +1,12 @@
 # Reference-guided generation and tracing
 
-## Sequence that worked
+## Proof and revision loop
 
-The early per-character approach sampled glyph variants and drew missing characters. It produced readable text, but the uneven joins and repeated shapes did not match the requested hand. A text-only image prompt then produced oversized, tidy lettering. The successful generation supplied actual visible reference pages to the image editor. If a host rejects a local image path, use its supported recent-image mechanism with only the intended reference images in scope. A prose description alone lost the character shapes.
-
-Use a short reference-guided edit instruction such as:
-
-> Replace the writing with the checked lines below. Keep the hand in the attached page. Carry over its irregular letter heights, cramped joins, uneven gaps, and small baseline changes wherever they appear in the sample. Keep the ink as dark and thick as the reference at the same scale. Preserve the rough letter shapes even when the result looks less tidy. Keep each number, sign, and exponent exact.
-
-Compare the proof and reference side by side using the same rule spacing. Look at repeated digits, narrow letter shapes, and the darkest downstrokes. If the proof looks tidier or thinner, feed the original page back into the editor, name the visible mismatch, and redo just the proof. Keep irregularity in the writing and preserve legible fraction and radical bars. Preserve room between problems while allowing the next section to start on the same page. Two columns work for short related parts. For two-column source images, crop into reading-order blocks with white padding before tracing.
+1. Inspect the whole reference page for margins, rule spacing and density. Select a detail crop with the kind of writing needed for this job, such as compact equations or a short prose explanation. Use the full page for layout and the crop for stroke shape. Record a few visible traits, including ink height relative to ruling, pen weight, repeated digit shapes and baseline variation. Preserve a tidy style when that is what the sample shows.
+2. Give the image editor the actual reference and a short fixed passage with a heading, representative equations and a few words of prose. Ask it to replace the sample writing with those exact lines while preserving the observed traits. Use the host's reference-image mechanism. Keep this same passage for every revision.
+3. Compare the proof and reference at equivalent rule spacing. Name one or two concrete differences, such as digits twice as tall as the reference or uniform gaps where the reference has cramped joins. Read the proof against the passage separately and check all digits, signs and exponents.
+4. If needed, send the reference and the closest proof back with a targeted edit. Specify the visible mismatch and the exact lines to preserve or correct. Try up to two revisions and keep the closest mathematically accurate result, even if it was earlier. Stop early when the proof is close or the edits stop improving. Report what is still off if no accurate proof is close enough.
+5. Reuse the chosen reference and settings for the full solution. Keep tall expressions and diagrams together. For two-column sources, use reading-order blocks with white padding before tracing.
 
 ## Actual rendering path
 
