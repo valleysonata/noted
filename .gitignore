@@ -1,0 +1,12 @@
+node_modules/
+private/
+output/
+*.pdf
+*.png
+*.jpg
+*.bmp
+*.ppm
+.env*
+*.pem
+*.key
+!assets/example.bmp
