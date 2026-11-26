@@ -1,6 +1,6 @@
 # noted
 
-noted is an agent skill for turning homework photos and a handwriting sample into a checked, ruled PDF of worked solutions. It uses your sample to guide the handwriting, including uneven lettering, spacing, and equation layout. Send the assignment and sample together in one prompt.
+noted is an agent skill for turning homework handwriting samples into a checked, identical PDF of worked solutions. It uses your sample to guide the handwriting, including uneven lettering, spacing, and equation layout. Send the assignment and sample together in one prompt.
 
 ## Install
 
